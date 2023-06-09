@@ -20,7 +20,6 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
-    "ngx-ds": "^0.0.2",
     "ngx-liburg-icon": "^0.0.26",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

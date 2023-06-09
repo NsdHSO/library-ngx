@@ -1,28 +1,45 @@
-<div>
-  <div class="flex">
-    <div ngxJumbotron
-         *ngFor="let person of( array | async)"
-      [style.min-width.rem]="9"
-         [style.gap.rem]=".3"
-    >
-      <div>
-        {{person.age}}
+<div class=" transition-all"
+>
+  <div class="flex"
+       #element
+       *ngIf="( array | async) as pers"
+       [libCarousel]="element"
+
+
+  >
+      <div ngxJumbotron
+           *ngFor="let person of pers"
+           [@fade]
+           [style.min-width.rem]="9"
+      >
+        <div>
+          {{person.age}}
+        </div>
+        <div>
+          {{person.id}}
+        </div>
+        <div>
+          {{person.name}}
+        </div>
       </div>
-      <div>
-        {{person.id}}
-      </div>
-      <div>
-        {{person.name}}
-      </div>
-    </div>
   </div>
 
 
+  <button class="carousel-previous"
+          liburgBtx
+          (click)="scrollPrevious()">Previous
+  </button>
+  <button class="carousel-next"
+          liburgBtx
+          (click)="scrollNext()">Next
+  </button>
   <button liburgBtx
-          (click)="showButtons = !showButtons">
+          (click)="showButtons = !showButtons"
+          class="">
     Show buttons
   </button>
   <div class="w-full radius bg-blueGray-50"
+       [@fade]
        ngxJumbotron
        *ngIf="showButtons"
   >
@@ -31,9 +48,7 @@
       liburgBtx
       data-ripple-light="true"
     >hikhkh
-      <div>
-        dasds
-      </div>
+      dasds
     </button>
     <button
       liburgBtx
@@ -65,3 +80,5 @@
     </div>
   </div>
 </div>
+
+<div>

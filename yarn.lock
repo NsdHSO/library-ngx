@@ -5341,13 +5341,6 @@ ng-packagr@^16.0.0:
   optionalDependencies:
     esbuild "^0.17.0"
 
-ngx-ds@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/ngx-ds/-/ngx-ds-0.0.2.tgz#f7a660032fd334491ca7f6fec88ba9b996d985db"
-  integrity sha512-66xl0nG2D71HGlC4Sb2CAVwy0brSuek2NHxeMWtYgG+ABzhtWn24/8NWmYzGG9Bn4bOi5gvOWZ1yVNnesY+5FA==
-  dependencies:
-    tslib "^2.3.0"
-
 ngx-liburg-icon@^0.0.26:
   version "0.0.26"
   resolved "https://registry.npmjs.org/ngx-liburg-icon/-/ngx-liburg-icon-0.0.26.tgz"

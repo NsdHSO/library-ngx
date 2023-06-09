@@ -57,5 +57,11 @@ export class JumbotronDirective {
         element.classList
       } ${this.rounded === 'MD' ? '' : 'rounded-full'}`
     );
+    // Add transition to width
+    this._renderer.setStyle(
+      element,
+      'transition',
+      'height 3s ease-in',
+    );
   }
 }
