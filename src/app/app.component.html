@@ -1,0 +1,67 @@
+<div>
+  <div class="flex">
+    <div ngxJumbotron
+         *ngFor="let person of( array | async)"
+      [style.min-width.rem]="9"
+         [style.gap.rem]=".3"
+    >
+      <div>
+        {{person.age}}
+      </div>
+      <div>
+        {{person.id}}
+      </div>
+      <div>
+        {{person.name}}
+      </div>
+    </div>
+  </div>
+
+
+  <button liburgBtx
+          (click)="showButtons = !showButtons">
+    Show buttons
+  </button>
+  <div class="w-full radius bg-blueGray-50"
+       ngxJumbotron
+       *ngIf="showButtons"
+  >
+    <button
+
+      liburgBtx
+      data-ripple-light="true"
+    >hikhkh
+      <div>
+        dasds
+      </div>
+    </button>
+    <button
+      liburgBtx
+      data-ripple-light="true"
+      variant="SECONDARY"
+    >hikhkh
+      <div>
+        dasds
+      </div>
+    </button>
+    <button
+      liburgBtx
+      data-ripple-light="true"
+      variant="DANGER"
+    >hikhkh
+      <div>
+        dasds
+      </div>
+    </button>
+    <button
+      liburgBtx
+      data-ripple-light="true"
+      variant="TERTIARY"
+    >hikhkh
+
+    </button>
+    <div class="bg-red-500">
+      dasds
+    </div>
+  </div>
+</div>
