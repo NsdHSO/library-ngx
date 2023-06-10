@@ -1,13 +1,17 @@
 <button liburgBtx
         class="arrow-carousel-container"
-        [disabled]="disabledArrows">
+        [disabled]="disabledArrows"
+        data-test="arrows"
+>
   <button [style.width.rem]="3"
           [disabled]="arrowLeftDisabled"
-          (click)="sendTriggerValue.emit(true)">
+          (click)="sendTriggerValue.emit(true)"
+          data-test="left-arrow">
     <mat-icon [svgIcon]="'fa_solid:angle-left'"></mat-icon>
   </button>
   <button [style.width.rem]="3"
           [disabled]="arrowRightDisabled"
+          data-test="right-arrow"
           (click)="sendTriggerValue.emit(false)">
     <mat-icon [svgIcon]="'fa_solid:angle-right'"></mat-icon>
   </button>
