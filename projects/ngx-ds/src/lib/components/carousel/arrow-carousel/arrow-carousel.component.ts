@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxBtxDirective } from '../../../ngx-btn.directive';
 import { MatIconModule } from '@angular/material/icon';
+
 /**
  * Represents a arrow carousel component.
  */
@@ -30,4 +31,12 @@ export class ArrowCarouselComponent {
    * @type {boolean}
    */
   @Input() disabledArrows = false;
+
+  /**
+   * Indicates whether the arrows are clicked.
+   * @type {EventEmitter} send flag
+   * if is true left side
+   * if is false right side
+   */
+  @Output() sendTriggerValue = new EventEmitter<boolean>();
 }
