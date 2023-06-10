@@ -1,37 +1,20 @@
 <div class=" transition-all"
 >
-  <div class="flex"
+  <div
        #element
        *ngIf="( array | async) as pers"
-       [libCarousel]="element"
-
-
   >
-      <div ngxJumbotron
-           *ngFor="let person of pers"
-           [@fade]
-           [style.min-width.rem]="9"
-      >
-        <div>
-          {{person.age}}
-        </div>
-        <div>
-          {{person.id}}
-        </div>
-        <div>
-          {{person.name}}
-        </div>
-      </div>
+    <lib-carousel></lib-carousel>
   </div>
 
 
   <button class="carousel-previous"
           liburgBtx
-          (click)="scrollPrevious()">Previous
+  >Previous
   </button>
   <button class="carousel-next"
           liburgBtx
-          (click)="scrollNext()">Next
+  >Next
   </button>
   <button liburgBtx
           (click)="showButtons = !showButtons"

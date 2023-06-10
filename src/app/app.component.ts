@@ -1,7 +1,6 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { of } from 'rxjs';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { CarouselDirective } from '../../projects/ngx-ds/src/lib/carousel.directive';
 
 @Component({
   selector: 'app-root',
@@ -91,32 +90,5 @@ export class AppComponent {
       age: 26,
     },
   ]);
-  @ViewChildren(CarouselDirective) carouselItems:
-    | QueryList<CarouselDirective>
-    | any;
 
-  scrollPrevious() {
-    const currentIndex = this.getCurrentIndex();
-    const previousIndex = currentIndex - 1;
-
-    if (previousIndex >= 0) {
-      const previousItem = this.carouselItems.toArray()[previousIndex];
-      previousItem.scrollPrevious();
-    }
-  }
-
-  scrollNext() {
-    const currentIndex = this.getCurrentIndex();
-    const nextIndex = currentIndex + 1;
-
-    if (nextIndex < this.carouselItems.length) {
-      const nextItem = this.carouselItems.toArray()[nextIndex];
-      nextItem.scrollNext();
-    }
-  }
-
-  private getCurrentIndex(): number {
-    const activeItem = this.carouselItems.find((item : any) => item.isActive);
-    return this.carouselItems.toArray().indexOf(activeItem);
-  }
 }

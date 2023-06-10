@@ -1,0 +1,58 @@
+:host{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrow-carousel-container {
+  padding: 0.5rem 0.2rem 0.2rem;
+  position: relative;
+  button {
+    transition: transform 0.1s;
+
+    &:hover {
+      ::ng-deep {
+        svg {
+          opacity: 0.8;
+          fill: red
+        }
+      }
+    }
+
+    &:active {
+      transform: scale(1.2) rotate(360deg);
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      ::ng-deep {
+        svg {
+          opacity: 0.8;
+          fill: white
+        }
+      }
+      &:active {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+      &:hover {
+        ::ng-deep {
+          svg {
+            opacity: 0.8;
+            fill: antiquewhite;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+
+  &::before{
+    position: absolute;
+    content: '';
+    width: 0.1rem;
+    height: 1rem;
+    top: .8rem;
+    left: 50%;
+    background: whitesmoke;
+  }
+}
