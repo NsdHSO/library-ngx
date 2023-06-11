@@ -2,17 +2,25 @@
         class="arrow-carousel-container"
         [disabled]="disabledArrows"
         data-test="arrows"
+        tabindex="-1"
 >
   <button [style.width.rem]="3"
           [disabled]="arrowLeftDisabled"
           (click)="sendTriggerValue.emit(true)"
-          data-test="left-arrow">
+          data-test="left-arrow"
+          aria-label="Previous"
+          [attr.aria-disabled]="arrowLeftDisabled ? 'true' : 'false'"
+
+  >
     <mat-icon [svgIcon]="'fa_solid:angle-left'"></mat-icon>
   </button>
   <button [style.width.rem]="3"
           [disabled]="arrowRightDisabled"
           data-test="right-arrow"
-          (click)="sendTriggerValue.emit(false)">
+          (click)="sendTriggerValue.emit(false)"
+          aria-label="Next"
+          [attr.aria-disabled]="arrowRightDisabled ? 'true' : 'false'"
+  >
     <mat-icon [svgIcon]="'fa_solid:angle-right'"></mat-icon>
   </button>
 </button>

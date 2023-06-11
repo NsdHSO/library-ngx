@@ -8,7 +8,7 @@ import { IconCoreModule } from 'ngx-liburg-icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxBtxDirective } from '../../projects/ngx-ds/src/lib/ngx-btn.directive';
 import { JumbotronDirective } from '../../projects/ngx-ds/src/lib/jumbotron.directive';
-import { CarouselComponent } from '../../projects/ngx-ds/src/lib/components/carousel';
+import { CarouselContainerComponent } from '../../projects/ngx-ds/src/lib/components/carousel';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +19,7 @@ import { CarouselComponent } from '../../projects/ngx-ds/src/lib/components/caro
     NgxBtxDirective,
     IconCoreModule,
     JumbotronDirective,
-    CarouselComponent,
+    CarouselContainerComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

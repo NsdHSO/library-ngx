@@ -1,6 +1,7 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { of } from 'rxjs';
 import { animate, style, transition, trigger } from '@angular/animations';
+import {toSignal} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-root',
@@ -42,52 +43,62 @@ export class AppComponent {
     {
       id: 1,
       name: 'John Doe',
-      age: 25,
+      ranting: 25,
+      icon: 'fa_brands:monero'
     },
     {
       id: 2,
       name: 'Jane Smith',
-      age: 30,
+      ranting: 30,
+      icon: 'fa_brands:monero'
     },
     {
       id: 3,
       name: 'David Johnson',
-      age: 35,
+      ranting: 35,
+      icon: 'fa_brands:monero'
     },
     {
       id: 4,
       name: 'Emily Brown',
-      age: 28,
+      ranting: 28,
+      icon: 'fa_brands:monero'
     },
     {
       id: 5,
       name: 'Michael Davis',
-      age: 32,
+      ranting: 32,
+      icon: 'fa_brands:monero'
     },
     {
       id: 6,
       name: 'Sarah Wilson',
-      age: 29,
+      ranting: 29,
+      icon: 'fa_brands:monero'
     },
     {
       id: 7,
       name: 'Robert Taylor',
-      age: 31,
+      ranting: 31,
+      icon: 'fa_brands:monero'
     },
     {
       id: 8,
       name: 'Jennifer Anderson',
-      age: 27,
+      ranting: 27,
+      icon: 'fa_brands:monero'
     },
     {
       id: 9,
       name: 'Christopher Martinez',
-      age: 33,
+      ranting: 33,
+      icon: 'fa_brands:monero'
     },
     {
       id: 10,
       name: 'Amanda Thompson',
-      age: 26,
+      ranting: 26,
+      icon: 'fa_brands:monero'
     },
   ]);
 

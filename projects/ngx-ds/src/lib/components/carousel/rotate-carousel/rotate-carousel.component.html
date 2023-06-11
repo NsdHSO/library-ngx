@@ -1,0 +1,9 @@
+<div *ngFor="let item of items" [@carouselItemAnimation]>
+  <div ngxJumbotron>
+    <ngx-card [icon]="item.icon"
+              [name]="item.name"
+              [ranting]="item.ranting">
+
+    </ngx-card>
+  </div>
+</div>
