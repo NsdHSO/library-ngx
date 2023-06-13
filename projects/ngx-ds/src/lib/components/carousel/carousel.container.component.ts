@@ -1,14 +1,13 @@
-import {
-  AfterViewInit,
-  Component,
-  Input,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArrowCarouselComponent } from './arrow-carousel/arrow-carousel.component';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { RotateCarouselComponent } from './rotate-carousel/rotate-carousel.component';
+import { Store } from '@ngrx/store';
+import {
+  rotateCarouselLeft, rotateCarouselRight
+} from "./actions";
+
 
 @Component({
   selector: 'lib-carousel',
@@ -34,8 +33,12 @@ export class CarouselContainerComponent implements OnChanges {
   /**
    * Creates an instance of CarouselContainerComponent.
    * @param {BreakpointObserver} _brka - The breakpoint observer.
+   * @param {Store} _store - The store instance
    */
-  constructor(private readonly _brka: BreakpointObserver) {}
+  constructor(
+    private readonly _brka: BreakpointObserver,
+    private readonly _store: Store
+  ) {}
 
   /**
    * Lifecycle hook that is called when any input property changes.
@@ -49,16 +52,11 @@ export class CarouselContainerComponent implements OnChanges {
    * Rotates the carousel.
    * @param {boolean} isLeft - Indicates whether the rotation is to the left side.
    */
-  public  rotate(isLeft: boolean): void {
+  public rotate(isLeft: boolean): void {
     if (isLeft) {
-      let first = this.items[0]
-      this.items.splice(0, 1)
-      this.items = [...this.items,first]
+      this._store.dispatch(rotateCarouselLeft());
     } else {
-
-      let last = this.items[this.items.length -1 ]
-      this.items.splice(-1, 1)
-      this.items = [last,...this.items]
+      this._store.dispatch(rotateCarouselRight());
     }
   }
 }
