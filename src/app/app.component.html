@@ -2,10 +2,10 @@
 >
   <div
        #element
-       *ngIf="( array | async) as pers"
+       *ngIf="( array$ | async) as cards"
   >
-    <lib-carousel [items]="pers"></lib-carousel>
-  </div>
+    <lib-carousel [items]="cards"></lib-carousel>
+    </div>
 
 
   <button class="carousel-previous"

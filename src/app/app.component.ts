@@ -1,7 +1,7 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
-import { of } from 'rxjs';
+import { Component } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
-import {toSignal} from "@angular/core/rxjs-interop";
+import { Store } from '@ngrx/store';
+import { getCarousel } from './actions';
 
 @Component({
   selector: 'app-root',
@@ -38,68 +38,13 @@ export class AppComponent {
   title = 'library';
   test = 'bg-primary';
   public showButtons: any;
+  array$ = this._store.select((value: any) => {
+    return value['cards'].data;
+  });
 
-  array = of([
-    {
-      id: 1,
-      name: 'John Doe',
-      ranting: 25,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      ranting: 30,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 3,
-      name: 'David Johnson',
-      ranting: 35,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 4,
-      name: 'Emily Brown',
-      ranting: 28,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 5,
-      name: 'Michael Davis',
-      ranting: 32,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 6,
-      name: 'Sarah Wilson',
-      ranting: 29,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 7,
-      name: 'Robert Taylor',
-      ranting: 31,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 8,
-      name: 'Jennifer Anderson',
-      ranting: 27,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 9,
-      name: 'Christopher Martinez',
-      ranting: 33,
-      icon: 'fa_brands:monero'
-    },
-    {
-      id: 10,
-      name: 'Amanda Thompson',
-      ranting: 26,
-      icon: 'fa_brands:monero'
-    },
-  ]);
+  constructor(private readonly _store: Store) {}
 
+  ngOnInit() {
+    this._store.dispatch(getCarousel());
+  }
 }
