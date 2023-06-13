@@ -32,5 +32,4 @@ import {
 export class RotateCarouselComponent {
   @Input()
   items: any[] = [];
-
 }

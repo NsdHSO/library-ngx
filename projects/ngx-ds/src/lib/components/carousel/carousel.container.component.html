@@ -1,8 +1,8 @@
 <div>
   <div>
-    <lib-arrow-carousel [disabledArrows]="fakeItems.length === 0" (sendTriggerValue)="rotate($event)"></lib-arrow-carousel>
+    <lib-arrow-carousel [disabledArrows]="items.length === 0" (sendTriggerValue)="rotate($event)"></lib-arrow-carousel>
   </div>
   <div>
-    <rotate-carousel [items]="fakeItems"></rotate-carousel>
+    <rotate-carousel [items]="items"></rotate-carousel>
   </div>
 </div>
